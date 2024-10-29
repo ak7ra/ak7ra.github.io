@@ -8,5 +8,6 @@
   - education
   - experience
   - personal
+    - recent activities and research interests
 - make banner with links
 - make nice style changes
