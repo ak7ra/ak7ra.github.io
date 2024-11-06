@@ -10,12 +10,39 @@
     <p>This is an individual project that I worked on during my time at UVA's Master's in Data Science program. This was arguably the most exciting project that I've done there, as it combined my two interests: statistical analysis and theatre.</p>
     <p>Link to GitHub repository: <a href="https://github.com/ak7ra/eta_theatre_reviews" target="_blank">Link</a></p>
     <br>
-    <p>To-do's:
+    <p>To-do's:</p>
     <ul>
-      <li>rewrite findings in html</li>
+      <li>rewrite findings in html (fix typos, rephrase parts)</li>
       <li>make it look nice</li>
     </ul>
-    </p>
+
+    <br><br>
+
+    <h2>Abstract</h2>
+    <p>Add later</p>
+
+    <h2>Introduction</h2>
+    <p>Theatrical performances are an art form that are expressed through rich, live storytelling. But how are those expressions received? What kind of discourse occurs from them? This project analyzes approximately 300 theatre performance reviews using Principle Component Analysis, Topic Models, Word Embeddings (word2vec) and Sentiment Analysis. Through these analyses, insights into theatrical performance reviews are uncovered.</p>
+    <br>
+    
+    <h2>Methods</h2>
+    <h3>Data</h3>
+    <p>The source data for this analysis was collected from the website <a href="https://www.playshakespeare.com/" target="_blank">https://www.playshakespeare.com/</a>. This website describes itself as 'the best Shakespeare source for plays, news, reviews, and discussion' and contains, amongst other contents, reviews of theatrical performances based on the works of William Shakespeare.</p>
+    <p>As the website was not web-scraping friendly, the webpages containing the reviews were manually downloaded as HTML files. In total, there were 292 HTML files which were later parsed into more analysis-appropriate formats. The code developed to parse through the source files are stored in the parser.ipynb file. This file, along with the 292 HTML files, are available on the GitHub page for this project.</p>
+    <p>The distribution of Shakespeare's work that the reviewed performances were based on, along with their genre, are as follows:</p>
+    <img src="eta_theatre_review_images/og_work_count.png"> <img src="eta_theatre_review_images/genre_count.png">
+    <p>The original works have an unequal distribution, but the genre is equally distributed within the corpus.</p>
+    <p>Below is a histogram of the word counts of each review, post-parsing:</p>
+
+    <p>Not done yet, to be added...</p>
+    <br>
+
+    <h2>Results</h2>
+
+    <br>
+
+    <h2>Discussion</h2>
+    
   </body>
 
   
