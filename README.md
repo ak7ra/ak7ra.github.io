@@ -5,8 +5,7 @@
 ## To-Do's:
 - add pages:
   - projects
-  - education
-  - experience
+  - education, experience
   - personal
     - recent activities and research interests
 - make banner with links
