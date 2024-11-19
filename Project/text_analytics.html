@@ -33,12 +33,69 @@
     <img src="eta_theatre_review_images/og_work_count.png" width="250"> <img src="eta_theatre_review_images/genre_count.png" width="250">
     <p>The original works have an unequal distribution, but the genre is equally distributed within the corpus.</p>
     <p>Below is a histogram of the word counts of each review, post-parsing:</p>
+    <img src="corpus_length_histogram.png" width="250">
+    <p>From the histogram, it can be seen that most reviews are around 1000 words in length. The outliers, such as the review with approximately 5000 words, were reviews written by those who were more emotionally invested in the performance in question. If this work is to be revised, this outlier may be omitted from the data.</p>
+    
+    <h3>Data Model</h3>
+    <p>The tables generated through the analysis will be discussed here briefly. The finer details and the tables listed are available on the GitHub repository.</p>
+    <h4>Core Tables</h4>
+    <ul>
+      <li>CORPUS.csv</li>
+      <li>LIB.csv</li>
+      <li>VOCAB.csv</li>
+    </ul>
+    <p>It should be noted that the CORPUS table has the indices review_id, sent_id, and token_id unlike OHCO, which is more commonly used. This is because the HTML format of the source documents made it impossible to separate paragraphs. In addition, most reviews had two or less paragraphs, suggesting that having the additional paragraph index would not be so helpful in the analysis.</p>
+    <p>In addition, the CORPUS table was filtered to exclude the names of characters present in Shakespeare's works. This was done to improve the results of the analyses, as the character names would be given a disproportionate level of importance due to their frequency.</p>
+    <p>The LIB table contains a few unique fields: Original Work, Overall Rating, Genre and Rating Category. The first two fields were extracted from the source file. Original Work refers to the Shakespeare work that the performance was based on, and contains values such as 'Twelfth Night' and 'MacBeth'. Overall Rating is a numerical variable containing integers from 1 to 5, with 1 as the lowest rating and 5 as the highest. The Overall Rating variable has a right-skewed distribution that looks like:</p>
+    <img src="rating_histogram_plain.png" width="250">
 
-    <p>Not done yet, to be added...</p>
+    <p>This distribution is shared amongst different genres:</p>
+    <img src="rating_histogram.png" width="250">
+
+    <p>The Rating Category variable was generated based on the Overall Rating variable. Reviews with Overall Rating values of 3 or less were given a Rating Category value of 'Negative', and those with Overall Rating values of 4 or higher were given a Rating Category value of 'Positive'.</p>
+    <p>The Genre variable was generated based on the Original Work variable and has the values 'Comedy' and 'Tragedy'. It is a categorical variable indicating the genre of the referenced Shakespeare's work.</p>
+    <p>Lastly, it should be noted that the VOCAB table had the field dfidf added onto itself during one of the analyses.</p>
+
+    <h4>Tables Generated During Analyses</h4>
+    <p>The tables below were generated through various text analysis methods employed in the analysis.ipynb file:</p>
+    <h5>Principal Component Analysis:</h5>
+    <ul>
+      <li>reduced_tfidf.csv</li>
+      <li>pca_dcm.csv</li>
+      <li>pca_loadings.csv</li>
+      <li>pca_compinf.csv</li>
+    </ul>
+    <h5>Topic Models (LDA):</h5>
+    <ul>
+      <li>topic.csv</li>
+      <li>topic_theta.csv</li>
+      <li>topic_phi.csv</li>
+    </ul>
+    <h5>Word Embeddings (word2vec):</h5>
+    <ul>
+      <li>word2vec.csv</li>
+    </ul>
+    <h5>Sentiment Analysis:</h5>
+    <ul>
+      <li>sentiment.csv</li>
+    </ul>
+  
     <br>
 
     <h2>Results</h2>
+    <p>Here, the exploration of the corpus will be discussed. Each text analysis methods employed will be discussed in separate sections.</p>
 
+    <h3>Principal Components Analysis</h3>
+    <p>For this analysis, the VOCAB table was filtered down to the 1000 most important nouns as ranked by DFIDF. The filtered down VOCAB table was then used to produce a TFIDF table with review_id as the index.</p>
+    <p>With this TFIDF table and the hyperparameters k=10, norm_docs=True, center_by_mean=False,center_by_variance=False, three tables were created: the DCM table, the loadings table, and the compinf table. These three tables contain information on the principal components, either on word or document level.</p>
+    <p>In order to explore the corpus, visualizations were made based on the DCM table.</p>
+    
+    <p>Below is a scatterplot of the reviews with PC0 and PC1 as the x-axis and y-axis respectively, with colors indicating the genre of the referenced Shakespeare play:</p>
+    <img src="vis_pcs_0_1_Genre.png" width=250>
+
+
+    <br>
+        <p>Not done yet, to be added...</p>
     <br>
 
     <h2>Discussion</h2>
