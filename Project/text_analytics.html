@@ -14704,9 +14704,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <p>It should be noted that the <code>CORPUS</code> table has the indices <code>review_id</code>, <code>sent_id</code>, and <code>token_id</code> unlike OHCO, which is more commonly used. This is because the HTML format of the source documents made it impossible to separate paragraphs. In addition, most reviews had two or less paragraphs, suggesting that having the additional paragraph index would not be so helpful in the analysis.</p>
 <p>In addition, the <code>CORPUS</code> table was filtered to exclude the names of characters present in Shakespeare's works. This was done to improve the results of the analyses, as the character names would be given a disproportionate level of importance due to their frequency.</p>
 <p>The <code>LIB</code> table contains a few unique fields: <code>Original Work</code>, <code>Overall Rating</code>, <code>Genre</code> and <code>Rating Category</code>. The first two fields were extracted from the source file. <code>Original Work</code> refers to the Shakespeare work that the performance was based on, and contains values such as 'Twelfth Night' and 'MacBeth'. <code>Overall Rating</code> is a numerical variable containing integers from 1 to 5, with 1 as the lowest rating and 5 as the highest. The <code>Overall Rating</code> variable has a right-skewed distribution that looks like:</p>
-<p><img src="eta_theatre_review_imagesrating_histogram_plain.png"  style="width: 600px;"/> &lt;/td&gt;</p>
+<p><img src="eta_theatre_review_imagesrating_histogram_plain.png"  style="width: 600px;"/></p>
 <p>And this distribution is shared amongst different genres:</p>
-<p><img src="eta_theatre_review_imagesrating_histogram.png"  style="width: 600px;"/> &lt;/td&gt;</p>
+<p><img src="eta_theatre_review_imagesrating_histogram.png"  style="width: 600px;"/></p>
 <p>The <code>Rating Category</code> variable was generated based on the <code>Overall Rating</code> variable. Reviews with <code>Overall Rating</code> values of 3 or less were given a <code>Rating Category</code> value of 'Negative', and those with <code>Overall Rating</code> values of 4 or higher were given a <code>Rating Category</code> value of 'Positive'.</p>
 <p>The <code>Genre</code> variable was generated based on the <code>Original Work</code> variable and has the values 'Comedy' and 'Tragedy'. It is a categorical variable indicating the genre of the referenced Shakespeare's work.</p>
 <p>Lastly, it should be noted that the <code>VOCAB</code> table had the field <code>dfidf</code> added onto itself during one of the analyses.</p>
@@ -14789,10 +14789,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>In order to explore the corpus, visualizations were made based on the DCM table.</p>
 <p>Below is a scatterplot of the reviews with PC0 and PC1 as the x-axis and y-axis respectively, with colors indicating the genre of the referenced Shakespeare play:</p>
-<p><img src="eta_theatre_review_images/vis_pcs_0_1_Genre.png"  style="width: 600px;"/> &lt;/td&gt;</p>
+<p><img src="eta_theatre_review_images/vis_pcs_0_1_Genre.png"  style="width: 600px;"/></p>
 <p>It can be observed that the reviews of plays with different genres overlap to some degree, but those in the 'Comedy' category tend to have higher PC1 values.</p>
 <p>This can be further explored in detail by changing the colors to indicate the referenced work:</p>
-<p><img src="eta_theatre_review_images/vis_pcs_0_1_Original Work.png"  style="width: 600px;"/> &lt;/td&gt;</p>
+<p><img src="eta_theatre_review_images/vis_pcs_0_1_Original Work.png"  style="width: 600px;"/></p>
 <p>The non-overlapping reviews seem to be limited to reviews of performances of <em>Midsummer Night's Dream</em> and <em>MacBeth</em>.</p>
 
 </div>
