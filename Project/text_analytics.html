@@ -33,7 +33,7 @@
     <img src="eta_theatre_review_images/og_work_count.png" width="250"> <img src="eta_theatre_review_images/genre_count.png" width="250">
     <p>The original works have an unequal distribution, but the genre is equally distributed within the corpus.</p>
     <p>Below is a histogram of the word counts of each review, post-parsing:</p>
-    <img src="corpus_length_histogram.png" width="250">
+    <img src="eta_theatre_review_images/corpus_length_histogram.png" width="250">
     <p>From the histogram, it can be seen that most reviews are around 1000 words in length. The outliers, such as the review with approximately 5000 words, were reviews written by those who were more emotionally invested in the performance in question. If this work is to be revised, this outlier may be omitted from the data.</p>
     
     <h3>Data Model</h3>
@@ -47,10 +47,10 @@
     <p>It should be noted that the CORPUS table has the indices review_id, sent_id, and token_id unlike OHCO, which is more commonly used. This is because the HTML format of the source documents made it impossible to separate paragraphs. In addition, most reviews had two or less paragraphs, suggesting that having the additional paragraph index would not be so helpful in the analysis.</p>
     <p>In addition, the CORPUS table was filtered to exclude the names of characters present in Shakespeare's works. This was done to improve the results of the analyses, as the character names would be given a disproportionate level of importance due to their frequency.</p>
     <p>The LIB table contains a few unique fields: Original Work, Overall Rating, Genre and Rating Category. The first two fields were extracted from the source file. Original Work refers to the Shakespeare work that the performance was based on, and contains values such as 'Twelfth Night' and 'MacBeth'. Overall Rating is a numerical variable containing integers from 1 to 5, with 1 as the lowest rating and 5 as the highest. The Overall Rating variable has a right-skewed distribution that looks like:</p>
-    <img src="rating_histogram_plain.png" width="250">
+    <img src="eta_theatre_review_images/rating_histogram_plain.png" width="250">
 
     <p>This distribution is shared amongst different genres:</p>
-    <img src="rating_histogram.png" width="250">
+    <img src="eta_theatre_review_images/rating_histogram.png" width="250">
 
     <p>The Rating Category variable was generated based on the Overall Rating variable. Reviews with Overall Rating values of 3 or less were given a Rating Category value of 'Negative', and those with Overall Rating values of 4 or higher were given a Rating Category value of 'Positive'.</p>
     <p>The Genre variable was generated based on the Original Work variable and has the values 'Comedy' and 'Tragedy'. It is a categorical variable indicating the genre of the referenced Shakespeare's work.</p>
@@ -91,7 +91,7 @@
     <p>In order to explore the corpus, visualizations were made based on the DCM table.</p>
     
     <p>Below is a scatterplot of the reviews with PC0 and PC1 as the x-axis and y-axis respectively, with colors indicating the genre of the referenced Shakespeare play:</p>
-    <img src="vis_pcs_0_1_Genre.png" width=250>
+    <img src="eta_theatre_review_images/vis_pcs_0_1_Genre.png" width=250>
 
 
     <br>
