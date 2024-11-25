@@ -1,0 +1,18 @@
+.banner {
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    
+    padding: 10px 0;
+    margin: 0;
+    list-style-type: none; /* Remove bullet points */
+}
+
+/* Style for each list item */
+.banner li {
+    margin: 0 15px; /* Add spacing between items */
+}
+
+/* Hover effect for links */
+.banner a:hover {
+    color: #ffcc00; /* Change color on hover */
+}
